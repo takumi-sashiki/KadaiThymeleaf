@@ -2,16 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>Thymeliaf課題</title>
+    <title th:text="#{content.title}">Thymeliaf課題</title>
 </head>
 <body>
     <h1 th:text="#{content.title}">Thymeliaf課題</h1>
     <h2 th:text="#{content.input}">入力画面</h2>
     <p th:text="#{content.inputForm}"></p>
-    <p th:text="'前回入力された値は「' + ${previous} + '」です。'"></p>
+    <p th:if="${previous}" th:text="#{content.message1} + ${previous} + #{content.message2}"></p>
     <form method="post" action="/output">
         <input type="text" name="previous">
-        <button type="submit">送信</button>
+        <button type="submit" th:text="#{content.submit}">送信</button>
     </form>
 </body>
 </html>
