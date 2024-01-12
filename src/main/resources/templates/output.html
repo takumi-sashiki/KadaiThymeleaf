@@ -5,8 +5,8 @@
     <title>Thymeliaf課題</title>
 </head>
 <body>
-    <h1>Thymeliaf課題</h1>
-    <h2>出力画面</h2>
+    <h1 th:text="#{content.title}">Thymeliaf課題</h1>
+    <h2 th:text="#{content.output}">出力画面</h2>
     <p th:text="'入力された値は「' + ${previous} + '」です。'"></p>
     <p><a th:href="@{/input?previous={aid}(aid=${previous})}">入力画面に戻る</a></p>
 </body>
